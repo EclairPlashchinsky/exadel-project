@@ -1,0 +1,17 @@
+commit 74a78255c50d88a14f560de8dca936fdf70a8414
+Author: EclairPlashchinsky <ecler_pla@tut.by>
+Date:   Tue Feb 12 20:01:59 2019 +0300
+
+    add status.txt
+
+commit 008a112137192efc7550efb45bc508b9049d9d9a
+Author: EclairPlashchinsky <ecler_pla@tut.by>
+Date:   Tue Feb 12 19:55:12 2019 +0300
+
+    add .gitignore
+
+commit 7f13752b37143a4b8a3a103075423c546bd4b76d
+Author: EclairPlashchinsky <ecler_pla@tut.by>
+Date:   Tue Feb 12 19:53:34 2019 +0300
+
+    add .gitignore
