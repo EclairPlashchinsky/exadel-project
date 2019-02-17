@@ -1,3 +1,5 @@
-.idea
-exadel.iml
+.idea/
+*.iml
+out/
+.DS_Store
 src
