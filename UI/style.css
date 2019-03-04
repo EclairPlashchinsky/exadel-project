@@ -1,0 +1,156 @@
+body{
+     font-family: Arial, Verdana,  sans-serif; 
+     font-size: 12pt; 
+     text-align: right;
+     background-image: url("background.jpg");
+     background-size: 100%;
+     background-repeat: round;
+     background-attachment:fixed;
+     color: black; 
+}
+
+
+header {
+     background-color: rgba(207, 207, 241, 0.6);
+     background-size: 100%;
+     outline:1px solid rgb(167, 167, 233);
+     height: 55px;
+     margin-top: 28px;
+     background-attachment:fixed;
+}
+
+
+footer {
+     background-color: rgba(207, 207, 241, 0.6);
+     text-align-last: center;
+     background-size: 100%;
+     outline:1px solid rgb(167, 167, 233);
+     height: 83px;
+     margin-top: 30px;
+     background-attachment:fixed;
+     font-size: 15px;
+}
+    
+
+.header__logo {
+     position: fixed;
+     height: 50px;
+     width: 50px;
+     margin: 2px;
+     left: 10px;   
+}
+
+.header__sitename {
+     position: fixed;
+     height: 36px;
+     width: 200px;
+     text-align: center;
+     font-size: 25px;
+     margin: 15px;
+}
+
+.forSearch{
+     width: 20%;
+     position: fixed;
+     margin: 2px;
+     left: 0.5%;
+     top: 15%;
+}
+
+.profilePicture{
+     border: 2px solid whitesmoke;
+     border-radius: 100px;
+     width: 40px; 
+     display: inline-block;
+     transition: 1s all;
+}
+
+.profilePicture:hover{
+     transform: scale(1.1);
+     transform: rotate(180deg);
+     cursor: pointer;
+}
+
+.forAdd{
+     margin: 1%;
+     width: 5%;
+     border: 2px solid black;
+     transition: 0.5s all;
+}
+
+.forAdd:hover{
+     transform: scale(1.1);  
+}
+
+.forImages{
+     border: 7px solid whitesmoke;
+     border-radius: 15px;
+     box-shadow: 3px 3px 7px #000000;
+     display: block;
+     margin: 0 auto;
+     padding-top: 0px;
+     width: 400px;
+     transition: 1s all;
+}
+
+.forImages:hover{
+     transform: scale(1.1);
+     border: 7px solid black;
+     cursor: pointer;
+}
+
+.forComments {
+     display: block;
+     margin: 5px auto;
+     width: 400px;
+     height: 180px;
+}
+
+.forComments__comments {
+     display: block;
+     height: 55%;
+     margin: 10% auto 3%;
+     width: 400px;
+     font-family: Verdana,  sans-serif; 
+     font-size: 12pt; 
+}
+
+.forLikes{
+     width: 11%;
+     border: 1px solid royalblue;
+     transition: 0.5s all;
+}
+
+.forLikes:hover{
+     transform: scale(1.1);  
+}
+
+.forRedact{
+     width: 10%;
+     border: 1px solid black;
+     transition: 0.5s all;
+}
+
+.forRedact:hover{
+    transform: scale(1.1);  
+}
+
+.forDelete{
+     width: 10%;
+     border: 1px solid red;
+     transition: 0.5s all;
+}
+
+.forDelete:hover{
+   transform: scale(1.1);  
+}
+
+.forButton{
+     text-align-last: center;
+     width: 300px;
+     margin: 0 calc(50% - 150px);
+}
+
+p {
+     color: black; 
+  }
