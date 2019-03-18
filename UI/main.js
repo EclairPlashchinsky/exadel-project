@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable no-console */
 class PostCollection {
   constructor(temp = []) {
@@ -45,14 +46,14 @@ class PostCollection {
     } else {
       i = skip;
     }
-    if (top === undefined) {
+    if (top == undefined) {
       j = 10;
     } else {
       j = top;
     }
     const temp = [];
-    for (; j !== 0 && i < this._photoPosts.length; i += 1) {
-      if (filterConfig === undefined || this._isappropriate(this._photoPosts[i], filterConfig)) {
+    for (; j != 0 && i < this._photoPosts.length; i += 1) {
+      if (filterConfig == undefined || this._isappropriate(this._photoPosts[i], filterConfig)) {
         if (this._addPhotoPost(temp, this._photoPosts[i])) {
           j -= 1;
         }
@@ -64,21 +65,21 @@ class PostCollection {
   // eslint-disable-next-line class-methods-use-this
   _isappropriate(photoPost, filterConfig) {
     if (filterConfig.author !== undefined) {
-      if (filterConfig.author === photoPost.author) {
+      if (filterConfig.author == photoPost.author) {
         return true;
       }
       return false;
     }
     if (filterConfig.createdAt !== undefined) {
-      if (filterConfig.createdAt.getDate() === photoPost.createdAt.getDate()
-            && filterConfig.createdAt.getFullYear() === photoPost.createdAt.getFullYear()
-            && filterConfig.createdAt.getMonth() === photoPost.createdAt.getMonth()) {
+      if (filterConfig.createdAt.getDate() == photoPost.createdAt.getDate()
+            && filterConfig.createdAt.getFullYear() == photoPost.createdAt.getFullYear()
+            && filterConfig.createdAt.getMonth() == photoPost.createdAt.getMonth()) {
         return true;
       }
       return false;
     }
     if (filterConfig.hashTags !== undefined) {
-      if (filterConfig.hashTags === photoPost.hashTags) {
+      if (filterConfig.hashTags == photoPost.hashTags) {
         return true;
       }
       return false;
@@ -105,12 +106,12 @@ class PostCollection {
 
   // eslint-disable-next-line class-methods-use-this
   validate(photoPost) {
-    if (typeof (photoPost.id) === typeof ('1')
-    && typeof (photoPost.hashTags) === typeof (['1'])
-    && typeof (photoPost.description) === typeof ('1')
-    && typeof (photoPost.author) === typeof ('1')
-    && typeof (photoPost.createdAt) === typeof (new Date())
-    && typeof (photoPost.photoLink) === typeof ('1')) {
+    if (typeof (photoPost.id) == typeof ('1')
+    && typeof (photoPost.hashTags) == typeof (['1'])
+    && typeof (photoPost.description) == typeof ('1')
+    && typeof (photoPost.author) == typeof ('1')
+    && typeof (photoPost.createdAt) == typeof (new Date())
+    && typeof (photoPost.photoLink) == typeof ('1')) {
       return true;
     }
     return false;
@@ -118,7 +119,8 @@ class PostCollection {
 
   get(id) {
     for (let i = 0; i < this._photoPosts.length; i += 1) {
-      if (this._photoPosts[i].id === id) {
+      // eslint-disable-next-line eqeqeq
+      if (this._photoPosts[i].id == id) {
         return this._photoPosts[i];
       }
     }
@@ -127,7 +129,7 @@ class PostCollection {
 
   edit(id, photoPost) {
     for (let i = 0; i < this._photoPosts.length; i += 1) {
-      if (this._photoPosts[i].id === id) {
+      if (this._photoPosts[i].id == id) {
         if (photoPost.description !== undefined) {
           this._photoPosts[i].description = photoPost.description;
         }
@@ -145,7 +147,7 @@ class PostCollection {
 
   remove(id) {
     for (let i = 0; i < this._photoPosts.length; i += 1) {
-      if (this._photoPosts[i].id === id) {
+      if (this._photoPosts[i].id == id) {
         this._photoPosts.splice(i, 1);
         return true;
       }
@@ -160,7 +162,7 @@ class PostCollection {
 
   addALike(id, name) {
     for (let i = 0; i < this._photoPosts.length; i += 1) {
-      if (this._photoPosts[i].id === id) {
+      if (this._photoPosts[i].id == id) {
         this._photoPosts[i].likes[this._photoPosts[i].likes.length] = name;
         return true;
       }
@@ -442,7 +444,3 @@ console.log(PC.get(22));
 PC.remove(22);
 console.log('Check if deleted element is still in array:');
 console.log(PC.get(22));
-
-PC.clear();
-console.log('Check if deleting of all elements is working:');
-console.log(PC.getPage(0, 5));
