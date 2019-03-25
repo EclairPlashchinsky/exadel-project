@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-console */
 class PostCollection {
@@ -8,6 +9,11 @@ class PostCollection {
         this._photoPosts[i] = temp[i];
       }
     }
+    this._lenght = this._photoPosts.length;
+  }
+
+  getlenght() {
+    return this._lenght;
   }
 
   addAll(temp) {
@@ -21,6 +27,7 @@ class PostCollection {
         count += 1;
       }
     }
+    this._lenght = this._photoPosts.length;
     return arrayOfNotValidate;
   }
 
@@ -99,6 +106,7 @@ class PostCollection {
   add(photoPost) {
     if (this.validate(photoPost)) {
       this._photoPosts[this._photoPosts.length] = photoPost;
+      this._lenght = this._photoPosts.length;
       return true;
     }
     return false;
@@ -127,6 +135,10 @@ class PostCollection {
     return null;
   }
 
+  getByOrder(a) {
+    return this._photoPosts[a];
+  }
+
   edit(id, photoPost) {
     for (let i = 0; i < this._photoPosts.length; i += 1) {
       if (this._photoPosts[i].id == id) {
@@ -149,6 +161,7 @@ class PostCollection {
     for (let i = 0; i < this._photoPosts.length; i += 1) {
       if (this._photoPosts[i].id == id) {
         this._photoPosts.splice(i, 1);
+        this._lenght = this._photoPosts.length;
         return true;
       }
     }
@@ -158,6 +171,7 @@ class PostCollection {
   clear() {
     this._photoPosts = null;
     this._photoPosts = [];
+    this._lenght = 0;
   }
 
   addALike(id, name) {
@@ -170,22 +184,6 @@ class PostCollection {
     return false;
   }
 }
-
-// this function is not for class, so I'll leave it here
-function changingColours() {
-  const heading = document.querySelector('changingcolor');
-  // eslint-disable-next-line prefer-template
-  const hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ','
-  + (Math.floor(Math.random() * 256)) + ','
-  + (Math.floor(Math.random() * 256)) + ')';
-  heading.style.color = hue;
-}
-setInterval(changingColours, 1000);
-
-const photoPost = {
-  author: 'Mr. Snow',
-  description: 'NEW DESCRIPTION'
-};
 
 const temporary = [
   {
@@ -280,167 +278,179 @@ const temporary = [
   },
   {
     id: '11',
-    description: 'Me, when I need to work on the cite',
+    description: 'Reding',
     createdAt: new Date('2018-03-10T23:19:12'),
     author: 'user_73304',
-    photoLink: 'picture1.jpg',
+    photoLink: 'picture11.jpg',
     hashTags: ['BFF', 'Evening'],
     likes: ['mother', 'dad', 'sonnofmomsfriend']
   },
   {
     id: '12',
-    description: 'Me, when I need to work on the cite',
+    description: 'Cute',
     createdAt: new Date('2018-03-10T23:19:12'),
     author: 'user_73304',
-    photoLink: 'picture1.jpg',
+    photoLink: 'picture12.jpg',
     hashTags: ['BFF', 'Evening'],
     likes: ['mother', 'dad', 'sonnofmomsfriend']
   },
   {
     id: '13',
-    description: 'Me, when I need to work on the cite',
+    description: 'Nature',
     createdAt: new Date('2018-03-10T23:19:12'),
     author: 'user_73304',
-    photoLink: 'picture1.jpg',
-    hashTags: ['BFF', 'Evening'],
-    likes: ['mother', 'dad', 'sonnofmomsfriend']
-  },
-  {
-    id: '14',
-    description: 'Me, when I need to work on the cite',
-    createdAt: new Date('2018-03-10T23:19:12'),
-    author: 'user_73304',
-    photoLink: 'picture1.jpg',
-    hashTags: ['BFF', 'Evening'],
-    likes: ['mother', 'dad', 'sonnofmomsfriend']
-  },
-  {
-    id: '15',
-    description: 'Me, when I need to work on the cite',
-    createdAt: new Date('2018-03-10T23:19:12'),
-    author: 'user_73304',
-    photoLink: 'picture1.jpg',
-    hashTags: ['BFF', 'Evening'],
-    likes: ['mother', 'dad', 'sonnofmomsfriend']
-  },
-  {
-    id: '16',
-    description: 'Me, when I need to work on the cite',
-    createdAt: new Date('2018-03-10T23:19:12'),
-    author: 'user_73304',
-    photoLink: 'picture1.jpg',
-    hashTags: ['BFF', 'Evening'],
-    likes: ['mother', 'dad', 'sonnofmomsfriend']
-  },
-  {
-    id: '17',
-    description: 'Me, when I need to work on the cite',
-    createdAt: new Date('2018-03-10T23:19:12'),
-    author: 'user_73304',
-    photoLink: 'picture1.jpg',
-    hashTags: ['BFF', 'Evening'],
-    likes: ['mother', 'dad', 'sonnofmomsfriend']
-  },
-  {
-    id: '18',
-    description: 'Me, when I need to work on the cite',
-    createdAt: new Date('2018-03-10T23:19:12'),
-    author: 'user_73304',
-    photoLink: 'picture1.jpg',
-    hashTags: ['BFF', 'Evening'],
-    likes: ['mother', 'dad', 'sonnofmomsfriend']
-  },
-  {
-    id: '19',
-    description: 'Me, when I need to work on the cite',
-    createdAt: new Date('2018-03-10T23:19:12'),
-    author: 'user_73304',
-    photoLink: 'picture1.jpg',
-    hashTags: ['BFF', 'Evening'],
-    likes: ['mother', 'dad', 'sonnofmomsfriend']
-  },
-  {
-    id: '20',
-    description: 'Me, when I need to work on the cite',
-    createdAt: new Date('2018-03-10T23:19:12'),
-    author: 'user_73304',
-    photoLink: 'picture1.jpg',
+    photoLink: 'picture13.jpg',
     hashTags: ['BFF', 'Evening'],
     likes: ['mother', 'dad', 'sonnofmomsfriend']
   }
 ];
 
-const PC = new PostCollection(temporary);
 
-console.log('first two ellements after creati:');
-console.log(PC.get(1));
-console.log(PC.get(2));
+class ViewGallery {
+  constructor() {
+    this._shown = 0;
+    this._curFilter = '';
+  }
 
-console.log('photos of Mr. Snow:');
-let example = PC.getPage(0, 5, photoPost);
+  incrementShown() {
+    this._shown += 1;
+  }
 
-for (let i = 0; i < example.length; i += 1) {
-  console.log(example[i]);
+  decrementShown() {
+    this._shown -= 1;
+  }
+
+  _createPost(item, container) {
+    const photo = document.createElement('div');
+    photo.classList.add('photo');
+    photo.id = item.id;
+    photo.innerHTML = `
+    <img src=${item.photoLink} class = "forImages">
+    <div class = "forComments">
+       <textarea name="comments" id="" cols="30" rows="10"
+       class = "forComments__comments">
+       ${item.description}
+       ${item.author}
+       ${item.hashTags}
+       added on ${this._reformDate(item.createdAt)}
+      </textarea>
+      <input type = "image" src = "redact.png" class = "forRedact">
+      <input type = "image" src = "like.png" class = "forLikes">
+      <input type = "image" src = "delete.png" class = "forDelete">
+    </div>`;
+    container.appendChild(photo);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  _reformDate(date) {
+    const dateOptions = {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    };
+    const timeOptions = {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: false
+    };
+    return (`${date.toLocaleDateString('en-US', dateOptions) } ${date.toLocaleTimeString('en-US', timeOptions)}`);
+  }
+
+  showPost(post) {
+    const photos = document.getElementById('photos');
+    this._createPost(post, photos);
+  }
+
+  showPhotoPosts(gallery, skip, amount) {
+    for (let a = skip; a < amount; a += 1) {
+      this.showPost(gallery.getByOrder(a));
+    }
+    this._shown += (amount);
+  }
+
+  showPhotoPostsWithout(gallery, skip, amount) {
+    for (let a = skip; a < amount; a += 1) {
+      this.showPost(gallery.getByOrder(a));
+    }
+  }
+
+  showPhotoPostsWith(gallery, skip, amount, newPost) {
+    const zer = document.getElementById('photos');
+    zer.innerHTML = ``;
+    for (let a = skip; a < (gallery.getPage(skip, amount, newPost)).length; a += 1) {
+      this.showPost(gallery.getPage(skip, amount, newPost)[a]);
+    }
+  }
+
+
+  removePost(posts, id) {
+    posts.remove(id);
+    this._shown -= 1;
+    const zer = document.getElementById('photos');
+    zer.innerHTML = ``;
+    this.showPhotoPostsWithout(posts, 0, this._shown);
+  }
+
+  loadMore(posts) {
+    const ten = (posts.getlenght() - this._shown) > 10 ? 10 : posts.getlenght() - this._shown;
+    this.showPhotoPosts(posts, this._shown, ten);
+  }
+
+  setFilter(filter) {
+    this._curFilter = filter;
+  }
+
+  edit(posts, id, newPost) {
+    posts.edit(id, newPost);
+    const zer = document.getElementById('photos');
+    zer.innerHTML = ``;
+    this.showPhotoPostsWithout(posts, 0, this._shown);
+  }
 }
 
-photoPost.author = 'Dad';
-console.log('photos of Dad:');
-example = PC.getPage(0, 5, photoPost);
-for (let i = 0; i < example.length; i += 1) {
-  console.log(example[i]);
+class User {
+  constructor(name, path) {
+    if (name !== '') {
+      this._name = name;
+      this._photoPath = path;
+      const parent = document.getElementById('whoAreYou');
+      parent.innerHTML = `<headertext class = "profileText">Welcome,${name}</headertext>
+      <img src = "${path}" class = "profilePicture">`;
+    }
+    else {
+      const parent = document.getElementById('whoAreYou');
+      parent.innerHTML = `<headertext class = "profileText">LogIn to become cool!</headertext>
+      <img src = "whoAreYou.jpg" class = "profilePicture">`;
+    }
+  }
+
+  set userName(name = '') {
+    this._name = name;
+  }
+
+  set userPhoto(path) {
+    this._photoPath = path;
+  }
+
+  get userName() {
+    return this._name;
+  }
 }
 
-PC.edit(5, photoPost);
-console.log('Photo with id 5 with changed description:');
-console.log(PC.get(5));
+const posts = new PostCollection(temporary);
+const viewer = new ViewGallery();
+const user = new User("user_73394", "profile_picture.jpg");
 
-const photo = {
-  id: 1
+viewer.showPhotoPosts(posts, 0, 4);
+
+viewer.loadMore(posts);
+viewer.removePost(posts, 1);
+const newPost = {
+  hashTags: ['New HashTag', 'Very new HashTag']
 };
+const Additional = {
+  author: 'Mr. Snow'
+};
+viewer.edit(posts, 3, newPost);
 
-console.log('Search with wrong id:');
-console.log(PC.get(photo));
-
-
-const newArray = [
-  {
-    id: '21',
-    description: 'Just give me a second, darling, to clear my head.',
-    createdAt: new Date('2018-03-17T23:19:12'),
-    author: 'On the single bed',
-    photoLink: 'Icamethroughthunder.jpg',
-    hashTags: [' the cold wind', 'the rain', 'the snow'],
-    likes: ['mother', 'sonnofmomsfriend', 'dog', 'AJR']
-  },
-  {
-    id: '22',
-    description: 'I broke down in horror at you standing there',
-    createdAt: new Date('2018-03-17T23:16:22'),
-    author: 'Iquestionedyourdoubt',
-    photoLink: 'picture2.jpg',
-    hashTags: ['talking', 'to God', 'now'],
-    likes: ['mother', 'sonnofmomsfriend']
-  },
-  {
-    id: 22,
-    escription: 'I broke down in horror at you standing there',
-    createdAt: new Date('2018-03-17T23:16:22'),
-    author: 'Iquestionedyourdoubt',
-    hotoLink: 'picture2.jpg',
-    hashTags: ['talking', 'to God', 'now'],
-    likes: ['mother', 'sonnofmomsfriend']
-  }];
-
-console.log('Not valid elements in new array: ');
-console.log(PC.addAll(newArray));
-console.log('Check if new elements are in our Array:');
-console.log(PC.get(22));
-console.log(PC.get(21));
-
-console.log('Adding a like to post with id 22:');
-PC.addALike(22, 'Hutts');
-console.log(PC.get(22));
-
-PC.remove(22);
-console.log('Check if deleted element is still in array:');
-console.log(PC.get(22));
+viewer.showPhotoPostsWith(posts, 0, 2, Additional);

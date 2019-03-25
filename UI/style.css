@@ -74,7 +74,6 @@ footer {
 .forAdd{
      margin: 1%;
      width: 5%;
-     border: 2px solid black;
      transition: 0.5s all;
 }
 
@@ -117,7 +116,6 @@ footer {
 
 .forLikes{
      width: 11%;
-     border: 1px solid royalblue;
      transition: 0.5s all;
 }
 
@@ -127,7 +125,6 @@ footer {
 
 .forRedact{
      width: 10%;
-     border: 1px solid black;
      transition: 0.5s all;
 }
 
@@ -137,7 +134,6 @@ footer {
 
 .forDelete{
      width: 10%;
-     border: 1px solid red;
      transition: 0.5s all;
 }
 
@@ -154,3 +150,5 @@ footer {
 p {
      color: black; 
   }
+ 
+ 
