@@ -14,25 +14,34 @@
   <header>
     <img class="header__logo" src="logo.jpg" alt="icon">
     <p class="header__sitename">Aphrodita</p> 
-    <input placeholder="Search..." class = "forSearch"> </input>
+    <input placeholder="Search..." class = "forSearch" id = "try"> <button id = "searchU" class = "forSearchBU">U</button>
+    <button id = "searchH" class = "forSearchBH">H</button>
+    <button id = "searchD" class = "forSearchBD">D</button> </input>
+    
     <div id = "whoAreYou"></div> 
   </header>
 
-  <form action="https://vk.com/ecler_dw" method="post">
-  <input type = "image" src = "add.svg" class = "forAdd"></form>
-
+  <div id = "sign"></div>
+  <form id="upload-container">
+      <div>
+          <input id="file-input" type="file" accept="image/*" name="file">
+          <label for="file-input" ><img id="upload-image" src = "add.svg" class = "forAdd" ></label>
+        </div>
+	</form>
   <br>
   <br> 
   
   <div id="photos"></div> 
   
-  <div id="popup-photos" hidden></div>
-
-  <div class="main-buttons">
   </div>
- <button class = "forButton">Load more</button>
+ <button id = "Load" class = "forButton">Load more</button>
 
-  <script src = "main.js" ></script> 
+ <script src = "PostCollection.js" ></script> 
+ <script src = "Base.js" ></script> 
+ <script src = "ViewGallery.js" ></script> 
+ <script src = "User.js" ></script> 
+ <script src = "OnClick.js" ></script> 
+
 
 <footer>
    <p>Aphrodita</p>
