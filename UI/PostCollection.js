@@ -190,6 +190,7 @@ class PostCollection {
           for (let j = 0; j <= this._photoPosts[i].likes.length; j += 1) {
             if (this._photoPosts[i].likes[j] === name) {
               this._photoPosts[i].likes.splice(j, 1);
+              localStorage.removeItem(`lk${i}|${j}`);
             }
           }
         }
@@ -206,46 +207,32 @@ class PostCollection {
       localStorage.setItem(`ca${i}`, this._photoPosts[i].createdAt.toISOString());
       localStorage.setItem(`au${i}`, this._photoPosts[i].author);
       localStorage.setItem(`pl${i}`, this._photoPosts[i].photoLink);
-      for (let j = 0; j < this._photoPosts[i].hashTags.length; j+= 1) {
+      for (let j = 0; j < this._photoPosts[i].hashTags.length; j += 1) {
         localStorage.setItem(`ht${i}|${j}`, this._photoPosts[i].hashTags[j]);
       }
-      for (let j = 0; j < this._photoPosts[i].likes.length; j+= 1) {
+      localStorage.setItem(`htl${i}`, this._photoPosts[i].hashTags.length);
+      for (let j = 0; j < this._photoPosts[i].likes.length; j += 1) {
         localStorage.setItem(`li${i}|${j}`, this._photoPosts[i].likes[j]);
       }
+      localStorage.setItem(`lkl${i}`, this._photoPosts[i].likes.length);
     }
+    localStorage.setItem('co', this._photoPosts.length);
   }
 
   restore() {
-    let stop;
-    for (let i = 100; i > -1; i -= 1) {
-      if (localStorage.getItem(`id${i}`) !== null) {
-        stop = i;
-        break;
-      }
-    }
+    const stop = localStorage.getItem('co');
     for (let j = 0; j < stop; j += 1) {
       this._photoPosts[j].id = localStorage.getItem(`id${j}`);
       this._photoPosts[j].description = localStorage.getItem(`de${j}`);
       this._photoPosts[j].createdAt = new Date(localStorage.getItem(`ca${j}`));
-      this._photoPosts[j].author = localStorage.getItem(`au${j}`); 
+      this._photoPosts[j].author = localStorage.getItem(`au${j}`);
       this._photoPosts[j].photoLink = localStorage.getItem(`pl${j}`);
-      let len = 0;
-      for (let h = 50; h >= 0; h -= 1) {
-        if (localStorage.getItem(`ht${j}|${h}`) !== null) {
-          len = h;
-          break;
-        }
-      }
-      for (let h = 0; h <= len; h += 1) {
+      let len = localStorage.getItem(`htl${j}`);
+      for (let h = 0; h < len; h += 1) {
         this._photoPosts[j].hashTags[h] = localStorage.getItem(`ht${j}|${h}`);
       }
-      for (let h = 50; h > 0; h -= 1) {
-        if (localStorage.getItem(`li${j}|${h}`) !== null) {
-          len = h;
-          break;
-        }
-      }
-      for (let h = 0; h <= len; h += 1) {
+      len = localStorage.getItem(`lkl${j}`);
+      for (let h = 0; h < len; h += 1) {
         this._photoPosts[j].likes[h] = localStorage.getItem(`li${j}|${h}`);
       }
     }

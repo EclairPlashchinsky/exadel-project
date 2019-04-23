@@ -125,8 +125,9 @@ document.getElementById('photos').addEventListener('click', (evt) => {
       posts.save();
     }
     if (document.getElementById(forH).value !== '') {
+      const HT = document.getElementById(forH).value;
       const newPost = {
-        hashTags: document.getElementById(forH).value
+        hashTags: HT.split(',')
       };
       viewer.edit(posts, r, user.name, newPost);
       posts.save();
