@@ -1,4 +1,4 @@
-package filter;
+package bsu.plashchinskyAEV.insta.filter;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebFilter(urlPatterns = {"/", "/status", "/get", "/check", "/page"})
-public class filter implements Filter {
+public class MetricsFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {

@@ -1,4 +1,4 @@
-package servlets;
+package bsu.plashchinskyAEV.insta.servlets;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

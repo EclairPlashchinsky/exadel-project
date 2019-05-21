@@ -1,4 +1,4 @@
-package servlets;
+package bsu.plashchinskyAEV.insta.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
