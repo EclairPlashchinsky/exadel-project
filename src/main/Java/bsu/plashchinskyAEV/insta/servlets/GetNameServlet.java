@@ -6,8 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//branch test
-
 @WebServlet("/get")
 
 public class GetNameServlet extends HttpServlet {
