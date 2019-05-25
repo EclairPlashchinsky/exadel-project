@@ -1,0 +1,1 @@
+select * from PHOTO_POST order by CREATION_DATE desc limit 5;
