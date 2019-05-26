@@ -1,0 +1,3 @@
+select USER.NAME from USER, PHOTO_POST where USER.USER_ID = PHOTO_POST.USER_ID
+group by USER.USER_ID
+having count(PHOTO_POST.USER_ID) > 3;

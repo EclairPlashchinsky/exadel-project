@@ -13,7 +13,7 @@ class User {
       const parent = document.getElementById('whoAreYou');
       this.name = name;
       parent.innerHTML = `  
-        <img src = "whoAreYou.jpg" class = "profilePicture"  id = "PP">`;
+        <img src = "../css/whoAreYou.jpg" class = "profilePicture"  id = "PP">`;
       const parentTwo = document.getElementById('sign');
       parentTwo.innerHTML = `<br>
         <input placeholder="Login" id = "Log" class = "forLog"> </input>
